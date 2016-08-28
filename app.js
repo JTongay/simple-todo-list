@@ -65,15 +65,14 @@
                 })
                 //edit button functionality
             edit.addEventListener('click', function() {
-                // var newText = doc.getElementById("editBox").value
                 var editBox = "<input type='text' id='editBox' value=" + text + "><button id='update' type='submit'>Update</button>";
 
                 listItem.innerHTML = editBox;
                 var update = doc.getElementById("update")
                 update.addEventListener("click", function() {
-                    var getUpdate = doc.getElementById("editBox").value;
-                    console.log(getUpdate);
-                    listItem.innerHTML = getUpdate;
+                    text = doc.getElementById("editBox").value;
+                    console.log(text);
+                    listItem.innerHTML = text;
                     listItem.appendChild(edit);
                     listItem.appendChild(removeButton)
 
