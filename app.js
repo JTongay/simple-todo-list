@@ -34,12 +34,13 @@
 
     //Events
     subButton.addEventListener('click', function(event) {
+        var text = doc.getElementById('textBox').value;
+
         //If block checks if textbox is empty
-        if (doc.getElementById('textBox').value !== "") {
+        if (text !== "") {
             //this keeps the page from refreshing
             event.preventDefault();
             //these create the variables I need to use
-            var text = doc.getElementById('textBox').value;
             var listItem = doc.createElement('li');
             var removeButton = doc.createElement('button')
             var edit = doc.createElement('button')
@@ -71,7 +72,6 @@
                 var update = doc.getElementById("update")
                 update.addEventListener("click", function() {
                     text = doc.getElementById("editBox").value;
-                    console.log(text);
                     listItem.innerHTML = text;
                     listItem.appendChild(edit);
                     listItem.appendChild(removeButton)
@@ -84,6 +84,7 @@
             alert("You have to enter something to do!")
         }
     })
+
 
     //Appends elements
 
